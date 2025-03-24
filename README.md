@@ -40,7 +40,7 @@ This automaton can be represented by the following regular expression:
 
 ## Implementation
 
-The transitions of the automaton are defined using the move predicate. This specifies how the automaton moves from one stat to another based on the input character.
+The transitions of the designed automaton are defined using “move”. This specifies how the automaton moves from one state to another based on the input character.
 
 ```prolog
 % Basic form: move(InitialState, NextState, Letter).
@@ -61,7 +61,7 @@ move(g,z,g).
 move(e,z,o).
 ```
 
-Each “move(InitialState, NextState, Letter).” indicates that from a given state, the automaton goes to the “NextState” when it reads the input letter. This defines the valid transitions for each word and the structure of the automaton.
+Each “move(InitialState, NextState, Letter).” indicates that from a state, the automaton goes to the “NextState” when it reads the input letter. This defines the valid transitions for each word and the structure of the automaton.
 
 The accepting state of the automaton is defined as:
 
