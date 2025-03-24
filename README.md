@@ -88,7 +88,7 @@ automatonCheck([], InitialState) :-
     accepting_case(InitialState).
 ```
 
-Finally, the recursive rule reads each letter in the input word ,checks the current state and, if a valid transition is possible, it moves to the next state. And this repeats itself until all letters are processed.
+The recursive rule processes each letter in the input word, checks the current state and, if a valid “move” is possible, it moves to the next state. And this repeats itself until all letters have been read.
 
 ```prolog
 automatonCheck([Letter| RestChar], InitialState) :-
@@ -96,7 +96,7 @@ automatonCheck([Letter| RestChar], InitialState) :-
     automatonCheck(RestChar, NextState).
 ```
 
-All of these, are implemented on the main file sindarin.pl. If the input is in the set of words defined previously  it returns true, otherwise it returns false.
+All of these, are implemented on the main file sindarin.pl. If the input is in the set of words defined previously it returns true, otherwise it returns false.
 
 
 ## Test
