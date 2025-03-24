@@ -31,3 +31,69 @@ Any other character is not accepted.
 
 Here’s the automaton I made:
 ![Diagrama en blanco (1)](https://github.com/user-attachments/assets/4e02dd77-fc80-4552-a08a-3dca68724699)
+
+This can also be represented using a regular expression, which provides an alternative method of describing the valid words that the automaton accepts.
+
+This automaton can be represented by the following regular expression:
+
+( ^D )(( r( aug | ego )) | ( ina ) | ( ol ) | ( ôr ))
+
+## Implementation
+
+The transitions of the automaton are defined using the move predicate. This specifies how the automaton moves from one stat to another based on the input character.
+
+```prolog
+% Basic form: move(InitialState, NextState, Letter).
+move(a,b,d).
+move(b,h,i).
+move(b,c,r).
+move(b,j,o).
+move(b,k,ô).
+move(c,f,a).
+move(c,d,e).
+move(h,i,n).
+move(j,z,l).
+move(k,z,r).
+move(f,g,u).
+move(d,e,g).
+move(i,z,a).
+move(g,z,g).
+move(e,z,o).
+```
+
+Each “move(InitialState, NextState, Letter).” indicates that from a given state, the automaton goes to the “NextState” when it reads the input letter. This defines the valid transitions for each word and the structure of the automaton.
+
+The accepting state of the automaton is defined as:
+
+```prolog
+accepting_case(z).
+```
+
+This means that if the automaton ends in the “z” state, the word is accepted (true).
+
+The “use_automaton” is the main predicate. It takes a word as input and converts it to a list of characters using “atom_chars” to then call the recursive rule “automatonCheck” to check the letters one by one.
+
+“atom_chars” is a built in predicate that converts an atom into a list of characters.
+
+```prolog
+use_automaton(Word) :-
+    atom_chars(Word, ListChar), 
+    automatonCheck(ListChar, a).
+```
+
+The base case represents the situation where the list of letters is empty.
+
+```prolog
+automatonCheck([], InitialState) :-
+    accepting_case(InitialState).
+```
+
+Finally, the recursive rule reads each letter in the input word ,checks the current state and, if a valid transition is possible, it moves to the next state. And this repeats itself until all letters are processed.
+
+```prolog
+automatonCheck([Letter| RestChar], InitialState) :-
+    move(InitialState, NextState, Letter),
+    automatonCheck(RestChar, NextState).
+```
+
+All of these, are implemented on the main file sindarin.pl. If the input is in the set of words defined previously  it returns true, otherwise it returns false.
