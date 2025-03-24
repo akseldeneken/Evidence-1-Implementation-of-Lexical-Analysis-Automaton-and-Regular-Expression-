@@ -143,3 +143,53 @@ You can use this command to try any word through the automaton.
 use_automaton(badbunny).
 ```
 
+## Analysis
+
+### Time Complexity
+
+The total time complexity of processing a word through my automaton is O(n), where n is the length of the input word. This is because my prolog program processes each letter of the word exactly once.
+
+### Other Solutions
+
+In Python, an alternative solution to implement a finite automaton for lexical analysis can be achieved using an approach with a dictionary for state transitions. I asked ChatGPT to implement this solution to analyze it further.
+
+```python
+class FiniteAutomaton:
+    def __init__(self):
+        # Define transitions as a dictionary
+        self.transitions = {
+            'a': {'d': 'b'},
+            'b': {'i': 'h', 'r': 'c', 'o': 'j', 'ô': 'k'},
+            'c': {'a': 'f', 'e': 'd'},
+            'h': {'n': 'i'},
+            'j': {'l': 'z'},
+            'k': {'r': 'z'},
+            'f': {'u': 'g'},
+            'd': {'g': 'e'},
+            'i': {'a': 'z'},
+            'g': {'g': 'z'},
+            'e': {'o': 'z'}
+        }
+        self.accepting_state = 'z'
+
+    def check_sequence(self, input_sequence):
+        current_state = 'a'  # Start state
+        for symbol in input_sequence:
+            if current_state in self.transitions and symbol in self.transitions[current_state]:
+                current_state = self.transitions[current_state][symbol]
+            else:
+                return False  # No transition found for the symbol
+        return current_state == self.accepting_state
+
+# Example usage
+automaton = FiniteAutomaton()
+print(automaton.check_sequence(['d', 'i', 'n', 'a']))  # Expected: True
+print(automaton.check_sequence(['d', 'o', 'l']))      # Expected: True
+print(automaton.check_sequence(['d', 'r', 'o', 'g']))  # Expected: False
+
+```
+
+OpenAI. (March 24, 2025). Automata Code in Python.
+
+The class has a method that checks if a word follows the correct sequence of states based on the input letters. This method loops through each character in the input word and checks if it goes to a valid state, returning `True` if the word ends at the accepting state and `False` otherwise. This solution is different from the Prolog version, as it uses an approach with loops instead of recursion.
+
