@@ -93,7 +93,11 @@ Finally, the recursive rule reads each letter in the input word ,checks the curr
 ```prolog
 automatonCheck([Letter| RestChar], InitialState) :-
     move(InitialState, NextState, Letter),
+    automatonCheck(RestChar, NextState).
 ```
+
+All of these, are implemented on the main file sindarin.pl. If the input is in the set of words defined previously  it returns true, otherwise it returns false.
+
 
 ## Test
 
@@ -139,8 +143,3 @@ You can use this command to try any word through the automaton.
 use_automaton(badbunny).
 ```
 
-
-    automatonCheck(RestChar, NextState).
-```
-
-All of these, are implemented on the main file sindarin.pl. If the input is in the set of words defined previously  it returns true, otherwise it returns false.
