@@ -194,3 +194,13 @@ OpenAI. (March 24, 2025). Automata Code in Python.
 The FiniteAutomaton class has a method that checks if a word follows the correct sequence of states based on the input letters. This method loops through each character in the input word and checks if it goes to a valid state, returning True if the word ends at the accepting state and False otherwise. This solution is different from the Prolog version, as it uses an approach with loops instead of recursion.
 
 So now, comparing the Python solution to my Prolog solution, both approaches achieve the same goal but each one has a different implementation style and complexity in my opinion. In Python, the solution uses loops to do the state transitions, making it easier to understand and manage the transitions. On the other hand, the Prolog solution uses recursion, where each state transition is handled through recursive function calls. The implementation in Python requires managing a class and iterating over the transitions, which, for me, adds extra complexity compared to the Prolog solution, where the logic is more straightforward and easy to understand. Although both solutions have the same time complexities of O(n), the Python solution requires more code and structures like classes and loops, while Prolog's recursion keeps the code simple.
+
+## References
+
+Prolog, A. (n.d.). *atom_chars/2*. ALS Prolog. https://alsprolog.com/docs/ref/atom_chars.html
+
+TutorialsPoint. (2025, March 21). *Deterministic finite Automaton tutorial*. https://www.tutorialspoint.com/automata_theory/deterministic_finite_automaton.htm
+
+Gateway, T. (2024, October 5). *Sindarin - Tolkien Gateway*. Tolkien Gateway. https://tolkiengateway.net/wiki/Sindarin
+
+*SINDARIN HUB*. (n.d.). SINDARIN HUB. https://sindarinlessons.weebly.com/
