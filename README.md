@@ -1,4 +1,5 @@
 # Evidence 1: Implementation of Lexical Analysis Automaton and Regular Expression.
+Aksel Deneken Maldonado A01711966
 ## Description
 
 For this evidence I chose the Sindarin language, created by J.R.R Tolkien and used in The Lord of the Rings and The Hobbit. “It is the most widely spoken Elvish language in Middle-earth during the Third Age, spoken by Men and Elves alike” ( Sindarin Hub, 2024). It is Welsh inspired and has similar sounds and similar phonotactics.
