@@ -191,5 +191,7 @@ print(automaton.check_sequence(['d', 'r', 'o', 'g']))  # Expected: False
 
 OpenAI. (March 24, 2025). Automata Code in Python.
 
-The class has a method that checks if a word follows the correct sequence of states based on the input letters. This method loops through each character in the input word and checks if it goes to a valid state, returning `True` if the word ends at the accepting state and `False` otherwise. This solution is different from the Prolog version, as it uses an approach with loops instead of recursion.
+The FiniteAutomaton class has a method that checks if a word follows the correct sequence of states based on the input letters. This method loops through each character in the input word and checks if it goes to a valid state, returning True if the word ends at the accepting state and False otherwise. This solution is different from the Prolog version, as it uses an approach with loops instead of recursion.
+
+Comparing the Python solution to my Prolog solution, both achieve the same goal, but they work in different ways. In Python, the solution uses loops to go through the state transitions, making it easy to follow. However, in Prolog, the solution uses recursion, meaning the program calls itself to move through states. The Python solution needs more code to handle things like classes and loops, while the Prolog solution is simpler and focuses on the logic directly. Both solutions have the same time complexity of O(n), but the Prolog approach is simpler and quicker to write since it doesn’t need as much extra setup. 
 
