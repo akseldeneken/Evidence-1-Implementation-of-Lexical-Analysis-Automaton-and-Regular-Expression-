@@ -101,7 +101,7 @@ All of these, are implemented on the main file sindarin.pl. If the input is in t
 
 ## Test
 
-To run the program, first open [sindarin.pl](http://sindarin.pl) in Prolog or a Prolog terminal. Then, to open the file, you need to run the following command:
+To run the program, first open sindarin.pl in Prolog or a Prolog terminal. Then, to open the file, you need to run the following command:
 
 ```prolog
 ["route_to_the_file/sindarin.pl"].
