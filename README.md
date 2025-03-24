@@ -93,6 +93,53 @@ Finally, the recursive rule reads each letter in the input word ,checks the curr
 ```prolog
 automatonCheck([Letter| RestChar], InitialState) :-
     move(InitialState, NextState, Letter),
+```
+
+## Test
+
+To run the program, first open [sindarin.pl](http://sindarin.pl) in Prolog or a Prolog terminal. Then, to open the file, you need to run the following command:
+
+```prolog
+["route_to_the_file/sindarin.pl"].
+```
+
+### Successful Tests:
+
+On this list are several test that should return “true”, as they are the words that were defined in the automaton and belong to the Sindarin language: 
+
+- dina
+- dol
+- dôr
+- draug
+- drego
+
+### Unsuccessful Tests:
+
+Below are words that are similar to the valid sequences in the Sindarin language but are not valid according to the automaton. Running this words will return false:
+
+- droga
+- dor
+- doli
+- dinha
+- drauh
+
+### Running Tests:
+
+To run and try a word through the automaton, use the *use_automaton* predicate. The expected result will be displayed, and you can compare it with the actual result return by Prolog.
+
+The following command is an example of testing the word dina:
+
+```prolog
+use_automaton(dina).
+```
+
+You can use this command to try any word through the automaton.
+
+```prolog
+use_automaton(badbunny).
+```
+
+
     automatonCheck(RestChar, NextState).
 ```
 
