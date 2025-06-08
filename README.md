@@ -31,7 +31,7 @@ I generated only one automaton for this language, to accept only the specific se
 Any other character is not accepted.
 
 Here’s the automaton I made:
-![Automaton Diagram](automaton.png)
+![Automaton Diagram](sindarinAutomata.png)
 
 The automaton starts in state a.
 
