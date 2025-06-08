@@ -143,19 +143,30 @@ Below are words that are similar to the valid sequences in the Sindarin language
 
 ### Running Tests:
 
-To run and try a word through the automaton, use the *use_automaton* predicate. The expected result will be displayed, and you can compare it with the actual result return by Prolog.
-
-The following command is an example of testing the word dina:
+To run the automated tests through the automaton, use the *run_tests.* predicate. The expected result for each test will be displayed.
 
 ```prolog
-use_automaton(dina).
+run_tests.
 ```
-
-You can use this command to try any word through the automaton.
-
+You will see output like the following:
 ```prolog
-use_automaton(badbunny).
+dina: true passed
+dol: true passed
+dôr: true passed
+draug: true passed
+drego: true passed
+droga: false passed
+dor: false passed
+doli: false passed
+dinha: false passed
+drauh: false passed
+1true
 ```
+If the result is true, it means the word is valid (accepted by the automaton). If it was supposed to be valid, the test passes.
+
+If the result is false, it means the word is invalid (not accepted by the automaton). If it was supposed to be invalid, the test also passes.
+
+So even if you see "false passed", that’s correct bcause the automaton rejected the word (false), and that’s exactly what it was supposed to do (passed).
 
 ## Analysis
 
