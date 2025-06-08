@@ -31,7 +31,20 @@ I generated only one automaton for this language, to accept only the specific se
 Any other character is not accepted.
 
 Here’s the automaton I made:
-![Diagrama en blanco (1)](https://github.com/user-attachments/assets/4e02dd77-fc80-4552-a08a-3dca68724699)
+![Automaton Diagram](automaton.png)
+
+The automaton starts in state a.
+
+For the word dina: d → i → n → a
+
+For dol: d → o → l
+
+For dôr: d → ô → r
+
+For draug: d → r → a → u → g
+
+For drego: d → r → e → g → o
+All these paths end in the accepting state z.
 
 This can also be represented using a regular expression, which provides an alternative method of describing the valid words that the automaton accepts.
 
