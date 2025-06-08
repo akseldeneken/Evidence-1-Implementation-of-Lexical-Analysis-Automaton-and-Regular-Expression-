@@ -56,3 +56,23 @@ drego :-
     write('drego'), nl,
     write('Expected: true'), nl,
     use_automaton(drego).
+
+run_tests :-
+    Valid = [dina, dol, dôr, draug, drego],
+    Invalid = [droga, dor, doli, dinha, drauh],
+    test_words(Valid, true),
+    test_words(Invalid, false).
+
+test_words([], _).
+test_words([Word|Rest], Expected) :-
+    (   use_automaton(Word)
+    ->  Actual = true
+    ;   Actual = false
+    ),
+    (   (Actual == Expected)
+    ->  Result = passed
+    ;   (Expected == true -> Result = unexpected_fail ; Result = unexpected_pass)
+    ),
+    format('~w: ~w ~w~n', [Word, Actual, Result]),
+    test_words(Rest, Expected).
+
